@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add ingredient</title>
+</head>
+<body>
+	<h1>Add ingredient</h1>
+	<form method="post" th:object="${toAdd}">
+	<label for="name">Ingredient name: </label> 
+	<input type="text" id="name" th:field="*{name}"/>
+	<br/>
+	<input type="submit" name="submit" value="submit"/>
+	</form>
+</body>
+</html>

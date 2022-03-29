@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Pizza</title>
+</head>
+<body>
+	<h1>Add A Pizza!</h1>
+	<h2 th:text="${pizza.ingredients.size()}"></h2>
+	<form method="post" th:object="${pizza}">
+	<label for="name">Name: </label>
+	<input type="text" id="name" th:field="*{name}" />
+	<br />
+	<label for="price">Price: </label>
+	<input type="text" id="price" th:field="*{price}" />
+	<br />
+	<div th:each="ingredient : ${ingredientsList}">
+	<label for="ingredients" th:text="${ingredient.name}"></label>
+	<input type="checkbox" name="ingredients" id="ingredients"
+		th:checked="${pizza.exist(ingredient.name)}"/>
+	</div>
+	<br />
+	<input type="submit" name="submit" value="submit" />
+	
+	</form>
+</body>
+</html>

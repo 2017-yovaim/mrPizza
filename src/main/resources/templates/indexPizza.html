@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pizzas Home Page</title>
+</head>
+<body>
+	<h1>Welcome to the Pizzas!</h1>
+	<div th:each="pizza : ${pizzaList}">
+	<a th:href="${pizza.id}" th:text="${pizza.id + ', ' + pizza.name}"></a>
+	</div>
+</body>
+</html>

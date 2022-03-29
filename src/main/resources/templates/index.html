@@ -1,0 +1,13 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ingredients Home Page</title>
+</head>
+<body>
+<h1>Welcome to the ingredients!</h1>
+<div th:each="ingredient : ${ingredientsList}">
+<a th:href="${ingredient.id}" th:text="${ingredient.id + ', ' + ingredient.name}"></a></div>
+</body>
+</html>
